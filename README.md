@@ -117,7 +117,7 @@ ConfidenceCheckNode (Threshold: 70%)
 ## **DAG Diagram**
 
 <p align="left">
-  <img src="dag_diagram.png" width="700" height="300" />
+  <img src="dag_diagram.png" width="700" height="400" />
 </p>
 
 ---
