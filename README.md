@@ -227,8 +227,13 @@ python scripts/run_cli.py --model_path models/lora_finetuned
 
 ```
 
-python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
+Input: I feel mixed about the movie, not sure how I feel.
 
+[InferenceNode] Predicted: Negative | Confidence: 52%
+[ConfidenceCheckNode] Confidence too low → triggering fallback...
+[BackupModel] Prediction: Negative | Confidence: 77%
+
+Final Label: Negative (Final label chosen via backup model)
 ```
 
 ---
@@ -241,24 +246,24 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 
 Input: This movie was fantastic.
 
-[InferenceNode] Predicted: Positive | Confidence: 94%
-Final Label: Positive (High-confidence prediction)
+[InferenceNode] Predicted: Positive | Confidence: 98%
 
+Final Label: Positive (High-confidence model prediction)
 ```
 
 ### Low confidence → user correction
 
 ```
 
-Input: The movie was painfully slow and boring.
+Input: The movie was okay, not too bad but not great either
 
-[InferenceNode] Predicted: Positive | Confidence: 54%
+[InferenceNode] Predicted: Positive | Confidence: 66%
 [ConfidenceCheckNode] Confidence too low → triggering fallback...
-[FallbackNode] Was this a negative review?
+[FallbackNode] Could you clarify your intent? Was this a negative review?
 
-User: Yes
+User: yes,it was definitely negative
+
 Final Label: Negative (Corrected via user clarification)
-
 ```
 
 ### User uncertain
@@ -266,7 +271,7 @@ Final Label: Negative (Corrected via user clarification)
 ```
 
 User: Not sure
-Final Label: Negative (Model prediction retained — user unsure)
+Final Label: Positive (Model prediction retained — user unsure)
 
 ```
 
