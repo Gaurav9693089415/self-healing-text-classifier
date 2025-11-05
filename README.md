@@ -239,8 +239,7 @@ Final Label: Negative (Final label chosen via backup model)
 
 ---
 
-## **CLI Flow Examples(Actual CLI Output (Experimental Results))**
-
+## **CLI Flow Examples (Based on Actual Experimental Output)**
 ### High confidence
 
 ```
