@@ -1,7 +1,5 @@
 
 
----
-
 # **Self-Healing Text Classification System**
 
 A confidence-aware sentiment classification pipeline built using a **LoRA fine-tuned DistilBERT model** and a **LangGraph-based DAG**.
