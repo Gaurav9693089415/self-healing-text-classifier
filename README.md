@@ -1,49 +1,69 @@
 
-
----
-
 # Self-Healing Text Classification System
 
-A confidence-aware sentiment classification pipeline built using **LangGraph**, a **LoRA fine-tuned DistilBERT model**, and a structured fallback mechanism to prevent incorrect predictions.
+A confidence-aware sentiment classification pipeline built using a LoRA fine-tuned DistilBERT model and a LangGraph-based DAG.  
+The system automatically detects low-confidence predictions and “self-heals” by:
 
-The system automatically detects low-confidence predictions and “self-heals” by either:
-
-* Escalating to a backup zero-shot classifier
-* Asking the user for clarification
-* Logging and finalizing the corrected result
+• Escalating to a backup zero-shot classifier  
+• Asking the user for clarification  
+• Logging and finalizing the corrected label  
 
 ---
 
 ## Features
 
-* LoRA-fine-tuned DistilBERT sentiment classifier
-* Self-healing DAG implemented using LangGraph
-* Confidence-based routing and decision-making
-* Fallback strategies: user clarification, optional backup model (BART-MNLI zero-shot)
-* Interactive CLI with clean, color-coded output
-* Structured logging (CSV + JSONL)
-* Log analysis utilities: histograms, confidence curves, fallback statistics
+• LoRA-fine-tuned DistilBERT classifier  
+• Self-healing DAG implemented using LangGraph  
+• Confidence-based routing and decision-making  
+• User clarification fallback and optional backup model  
+• Clean, interactive CLI with colored output  
+• Structured logs (CSV + JSONL)  
+• Log analysis utilities: confidence histograms, curves, fallback statistics  
 
 ---
 
 ## System Architecture
 
-### DAG Overview
+### How LangGraph DAG Works in This Project
 
-The classification pipeline is implemented as a directed acyclic graph (DAG) with confidence-based routing:
+The entire classification pipeline is implemented as a LangGraph workflow, where every processing step is modeled as a node:
 
-* High-confidence predictions go directly to `FinalizeNode`
-* Low-confidence predictions are routed to `FallbackNode`
-* Fallback resolves using user confirmation or backup model
+• **InferenceNode** – runs the trained model  
+• **ConfidenceCheckNode** – compares confidence to a threshold  
+• **FallbackNode** – performs user clarification or backup model inference  
+• **FinalizeNode** – produces and logs the final label  
 
-### DAG Diagram
+Using LangGraph ensures:
+
+1. Clear and deterministic routing based on confidence  
+2. Modularity (each step is isolated, testable, and extensible)  
+3. Traceability (events logged at each stage)  
+4. Correctness-first design: low-confidence predictions never pass unchecked  
+
+This makes the system robust, predictable, and aligned with human-in-the-loop AI principles.
+
+### Human-in-the-Loop Rationale
+
+If model confidence is low, relying on automation is unsafe.  
+The system therefore asks the user:
+
+“Was this a positive review?”
+
+This prevents incorrect outputs, strengthens reliability, and demonstrates responsible fallback design.  
+If clarification is still uncertain, the model’s original prediction is retained but marked as “user unsure”.
+
+---
+
+## DAG Diagram
 
 <img src="./dag_diagram.png" width="480" height="350" />
 
+---
 
 ## Project Structure
 
 ```
+
 self_healing_cls/
 │── data/
 │── models/
@@ -66,6 +86,7 @@ self_healing_cls/
 │── dag_diagram.png
 │── README.md
 │── requirements.txt
+
 ```
 
 ---
@@ -74,66 +95,83 @@ self_healing_cls/
 
 ### 1. Create Virtual Environment
 
-```bash
+```
+
 python -m venv myenv
 myenv\Scripts\activate
+
 ```
 
 ### 2. Install Dependencies
 
-```bash
+```
+
 pip install -r requirements.txt
+
 ```
 
 ---
 
 ## Fine-Tuning the Model (LoRA)
 
-The dataset should follow the format:
+Dataset format:
 
 ```
+
 text,label
 I loved this movie!,1
 This was bad.,0
+
 ```
 
 ### Train on the full dataset
 
-```bash
+```
+
 python scripts/train.py --csv data/train.csv
+
 ```
 
-### Train on a smaller sample (faster)
+### Train on a smaller sample
 
-```bash
+```
+
 python scripts/train.py --csv data/train.csv --sample_size 2000
-```
-
-The fine-tuned model is saved to:
 
 ```
+
+Model output directory:
+
+```
+
 models/lora_finetuned/
+
 ```
 
 ---
 
 ## Running the Self-Healing CLI
 
-### 1. Standard Mode (user clarification only)
+### Standard Mode (User Clarification Fallback)
 
-```bash
-python scripts/run_cli.py --model_path models/lora_finetuned
 ```
 
-### 2. With Backup Zero-Shot Model
+python scripts/run_cli.py --model_path models/lora_finetuned
 
-```bash
+```
+
+### With Backup Zero-Shot Model
+
+```
+
 python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
+
 ```
 
 ### Example CLI Session
 
 ```
+
 Input: The movie was painfully slow and boring.
 
 [InferenceNode] Predicted: Positive | Confidence: 54%
@@ -143,23 +181,28 @@ Input: The movie was painfully slow and boring.
 User: Yes, it was definitely negative.
 
 Final Label: Negative (Corrected via user clarification)
+
 ```
 
 ---
 
 ## Log Analysis
 
-Generate statistical charts from past runs:
+Run:
 
-```bash
-python scripts/analyze_logs.py
 ```
 
-The following files are saved in `logs/`:
+python scripts/analyze_logs.py
 
-* confidence_histogram.png
-* confidence_curve.png
-* fallback_stats.png
+```
+
+Generates:
+
+• confidence_histogram.png  
+• confidence_curve.png  
+• fallback_stats.png  
+
+Saved inside `logs/`.
 
 ---
 
@@ -179,21 +222,20 @@ The following files are saved in `logs/`:
 
 ## Demo Video
 
-Add the Google Drive or YouTube link here after recording the demonstration.
+(Add Google Drive / YouTube link here.)
 
 ---
 
 ## Summary
 
-This project implements a complete self-healing sentiment classification pipeline using:
+This project implements a robust self-healing sentiment classification pipeline using:
 
-* Transformer fine-tuning with LoRA
-* Confidence-aware inference
-* Human-in-the-loop fallback strategies
-* Structured logs and performance analytics
-* Clean, modular LangGraph workflow
+• LoRA-based transformer fine-tuning  
+• Confidence-aware inference and routing  
+• Human-in-the-loop fallback strategy  
+• Structured logs and analysis  
+• Clean, modular LangGraph DAG design  
 
-The system is designed to be robust, interpretable, and suitable for production-grade applications.
 
----
+```
 
