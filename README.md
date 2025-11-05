@@ -42,7 +42,7 @@ Using LangGraph ensures:
 
 This makes the system robust, predictable, and aligned with human-in-the-loop AI principles.
 
-### Human-in-the-Loop Rationale
+## Human-in-the-Loop Rationale
 
 If model confidence is low, relying on automation is unsafe.  
 The system therefore asks the user:
@@ -172,15 +172,25 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 
 ```
 
-Input: The movie was painfully slow and boring.
+Input: The movie was painfully slow and boring             
+      
+[InferenceNode] Predicted: Negative | Confidence: 98%
 
-[InferenceNode] Predicted: Positive | Confidence: 54%
+Final Label: Negative (High-confidence model prediction)   
+
+
+Input: I feel mixed about the movie, not sure how I feel.
+
+[InferenceNode] Predicted: Negative | Confidence: 52%
 [ConfidenceCheckNode] Confidence too low → triggering fallback...
-[FallbackNode] Could you clarify your intent? Was this a negative review?
+[FallbackNode] Could you clarify your intent? Was this a positive review?
 
-User: Yes, it was definitely negative.
+User: yes,it was definitely positive.
 
-Final Label: Negative (Corrected via user clarification)
+Final Label: Positive (Corrected via user clarification)   
+
+Input: exit
+Exiting... Goodbye!
 
 ```
 
