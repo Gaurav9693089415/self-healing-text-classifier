@@ -1,0 +1,17 @@
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | __pycache__
+  | myenv
+  | venv
+  | models
+  | logs
+  | data
+)/
+'''
