@@ -7,7 +7,17 @@ A production-ready sentiment classification pipeline built using a **LoRA fine-t
 The system intelligently handles low-confidence predictions through human-in-the-loop clarification and an optional backup zero-shot classifier, ensuring correctness over blind automation.
 
 ---
+##  Download Model & Dataset
 
+### 📂 Dataset
+Full dataset used for fine-tuning (raw + processed):
+👉 https://drive.google.com/drive/folders/1zOKKEYsABH2yBv3cTAUfpLdWVZyRgH6V?usp=sharing
+
+### 🧠 Fine-Tuned Model
+Complete LoRA fine-tuned DistilBERT model:
+👉 https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfCwJ1S_pt97_d?usp=sharing
+
+---
 ## **Demo Output (Screenshot)**
 
 The following screenshot demonstrates the actual CLI execution of the Self-Healing Classification System, showcasing the complete workflow including inference, confidence checking, fallback, and final decision.
@@ -55,6 +65,7 @@ To intentionally demonstrate fallback during evaluation, you may either:
 - Provide more ambiguous input sentences.
 
 ---
+
 
 ## **Overview**
 
