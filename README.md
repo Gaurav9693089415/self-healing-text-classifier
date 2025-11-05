@@ -38,7 +38,7 @@ The classification pipeline is implemented as a directed acyclic graph (DAG) wit
 
 ### DAG Diagram
 
-<img src="./dag_diagram.png" width="480" height="300" />
+<img src="./dag_diagram.png" width="480" height="350" />
 
 
 ## Project Structure
