@@ -305,17 +305,19 @@ Saved in the `logs/` directory.
 
 ### **Chart Descriptions:**
 
- * 1. confidence_histogram.png
+ *  confidence_histogram.png
  Shows the distribution of model confidence scores across all predictions.
  This helps evaluate whether the classifier is generally confident, uncertain, or overly biased toward certain score ranges.
 
 
-  * 2. confidence_curve.png
+
+  *  confidence_curve.png
   Plots confidence values in chronological order based on the sequence of inputs.
   Useful for identifying performance trends such as fluctuations in confidence, stability across sessions, or points where fallbacks were triggered.
 
 
-  * 3. fallback_stats.png
+
+  *  fallback_stats.png
   A comparison of how many predictions were finalized directly vs. how many required fallback.
   This chart gives a clear picture of how frequently the self-healing mechanism activates and whether the confidence threshold is tuned appropriately.
 
