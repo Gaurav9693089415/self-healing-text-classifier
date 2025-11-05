@@ -300,7 +300,7 @@ Saved in the `logs/` directory.
 
 ---
 
-## **Evaluation Mapping **
+## Evaluation Mapping 
 
 | Requirement                   | Status      |
 | ----------------------------- | ----------- |
