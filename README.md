@@ -33,9 +33,8 @@ Final Label: Negative (Corrected via user clarification)
 
 ```
 
-This example is **illustrative**, meant to demonstrate how fallback *should* operate.
 
-In this project, the fine-tuned DistilBERT model performs significantly better on the IMDB dataset and often produces **very high confidence scores (85–99%)**, even for moderately complex sentences. This is expected because:
+In this project(in my case ,for screenshot), the fine-tuned DistilBERT model performs significantly better on the IMDB dataset and often produces **very high confidence scores (85–99%)**, even for moderately complex sentences. This is expected because:
 
 - IMDB sentiment classification is a relatively simple dataset  
 - DistilBERT adapts well during LoRA fine-tuning  
