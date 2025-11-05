@@ -1,5 +1,4 @@
 
-
 ---
 
 # **Self-Healing Text Classification System**
@@ -18,47 +17,45 @@ The following screenshot demonstrates the actual CLI execution of the Self-Heali
 </p>
 
 ---
----
 
-## **Note on Output Differences ( Assignment Example Vs. Screenshot)**
+## **Why the Screenshot Output Differs from the Assignment Example**
 
-Why the Screenshot Output Differs from the Assignment Example
-
-The assignment example shows:
+The assignment includes a sample interaction such as:
 
 ```
+
 Input: The movie was painfully slow and boring.
 [InferenceNode] Predicted label: Positive | Confidence: 54%
 [ConfidenceCheckNode] Confidence too low. Triggering fallback...
 [FallbackNode] Could you clarify your intent? Was this a negative review?
 User: Yes, it was definitely negative.
 Final Label: Negative (Corrected via user clarification)
+
 ```
 
-This was provided only to demonstrate how the fallback mechanism should behave.
+This example is **illustrative**, meant to demonstrate how fallback *should* operate.
 
-In this project, the fine-tuned DistilBERT model performs significantly better, often producing high-confidence predictions (85–99%) on the IMDB sentiment dataset.
-This happens because:
+In this project, the fine-tuned DistilBERT model performs significantly better on the IMDB dataset and often produces **very high confidence scores (85–99%)**, even for moderately complex sentences. This is expected because:
 
-IMDB sentiment classification is a relatively easy dataset
-
-DistilBERT adapts very well during LoRA fine-tuning
-
-The model learns strong sentiment patterns
-
-Clear negative/positive sentences get classified with very high certainty
+- IMDB sentiment classification is a relatively simple dataset  
+- DistilBERT adapts well during LoRA fine-tuning  
+- The model learns sentiment cues very effectively  
+- Clear positive/negative reviews are classified with high certainty  
 
 As a result:
 
-High-confidence examples skip fallback (correct behavior)
+- High-confidence predictions may skip fallback (correct behavior)  
+- Ambiguous sentences still trigger fallback (as shown in the screenshot)  
 
-Ambiguous examples trigger fallback (as shown in the screenshot)
+This difference **does not indicate any issue** with the system — it simply reflects that the trained model is stronger than the hypothetical example in the assignment.
 
-This is expected and confirms that the model is trained properly and the DAG logic is functioning correctly.
+To intentionally demonstrate fallback during evaluation, you may either:
 
-To force the fallback for demo purposes, the confidence threshold can be temporarily increased (e.g., from 0.70 → 0.99), or ambiguous sentences can be used.
+- Temporarily increase the threshold (e.g., 0.70 → 0.99), or  
+- Provide more ambiguous input sentences.
 
 ---
+
 ## **Overview**
 
 Modern text classifiers may produce uncertain predictions when input text is ambiguous.
@@ -103,15 +100,17 @@ This makes the final decision more reliable and transparent.
 ## **System Architecture**
 
 ```
+
 User Input (CLI)
-     │
-     ▼
+│
+▼
 InferenceNode (LoRA DistilBERT)
-     │
-     ▼
+│
+▼
 ConfidenceCheckNode (Threshold: 70%)
-     ├── High Confidence → FinalizeNode
-     └── Low Confidence  → FallbackNode → FinalizeNode
+├── High Confidence → FinalizeNode
+└── Low Confidence  → FallbackNode → FinalizeNode
+
 ```
 
 ---
@@ -127,6 +126,7 @@ ConfidenceCheckNode (Threshold: 70%)
 ## **Project Structure**
 
 ```
+
 self_healing_cls/
 ├── data/
 ├── models/
@@ -150,6 +150,7 @@ self_healing_cls/
 ├── demo_output.png
 ├── requirements.txt
 └── README.md
+
 ```
 
 ---
@@ -159,14 +160,18 @@ self_healing_cls/
 ### Create virtual environment
 
 ```
+
 python -m venv myenv
 myenv\Scripts\activate
+
 ```
 
 ### Install dependencies
 
 ```
+
 pip install -r requirements.txt
+
 ```
 
 ---
@@ -176,27 +181,35 @@ pip install -r requirements.txt
 Dataset format:
 
 ```
+
 text,label
 "I loved this movie!",1
 "It was boring.",0
+
 ```
 
 ### Train on full dataset
 
 ```
+
 python scripts/train.py --csv data/train.csv
+
 ```
 
 ### Fast experiment (sample only)
 
 ```
+
 python scripts/train.py --csv data/train.csv --sample_size 2000
+
 ```
 
 Model artifacts are saved in:
 
 ```
+
 models/lora_finetuned/
+
 ```
 
 ---
@@ -206,13 +219,17 @@ models/lora_finetuned/
 ### Standard mode (user fallback)
 
 ```
+
 python scripts/run_cli.py --model_path models/lora_finetuned
+
 ```
 
 ### With backup zero-shot model
 
 ```
+
 python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
+
 ```
 
 ---
@@ -222,15 +239,18 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 ### High confidence
 
 ```
+
 Input: This movie was fantastic.
 
 [InferenceNode] Predicted: Positive | Confidence: 94%
 Final Label: Positive (High-confidence prediction)
+
 ```
 
 ### Low confidence → user correction
 
 ```
+
 Input: The movie was painfully slow and boring.
 
 [InferenceNode] Predicted: Positive | Confidence: 54%
@@ -239,19 +259,24 @@ Input: The movie was painfully slow and boring.
 
 User: Yes
 Final Label: Negative (Corrected via user clarification)
+
 ```
 
 ### User uncertain
 
 ```
+
 User: Not sure
 Final Label: Negative (Model prediction retained — user unsure)
+
 ```
 
 ### With backup model
 
 ```
+
 [BackupModel] Prediction: Negative | Confidence: 82%
+
 ```
 
 ---
@@ -261,14 +286,16 @@ Final Label: Negative (Model prediction retained — user unsure)
 Generate analytics:
 
 ```
+
 python scripts/analyze_logs.py
+
 ```
 
 Charts generated:
 
-* confidence_histogram.png
-* confidence_curve.png
-* fallback_stats.png
+* confidence_histogram.png  
+* confidence_curve.png  
+* fallback_stats.png  
 
 Saved in the `logs/` directory.
 
@@ -292,8 +319,7 @@ Saved in the `logs/` directory.
 
 ## **Author**
 
-**Gaurav Kumar**
-GitHub: [https://github.com/Gaurav9693089415](https://github.com/Gaurav9693089415)
+**Gaurav Kumar**  
+GitHub: https://github.com/Gaurav9693089415
 
 ---
-
