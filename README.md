@@ -22,7 +22,9 @@ The following screenshot demonstrates the actual CLI execution of the Self-Heali
 
 ## **Note on Output Differences ( Assignment Example Vs. Screenshot)**
 
-The assignment example:
+Why the Screenshot Output Differs from the Assignment Example
+
+The assignment example shows:
 
 ```
 Input: The movie was painfully slow and boring.
@@ -33,17 +35,28 @@ User: Yes, it was definitely negative.
 Final Label: Negative (Corrected via user clarification)
 ```
 
-is an illustrative sample to demonstrate fallback behavior.
+This was provided only to demonstrate how the fallback mechanism should behave.
 
-In this implementation(in my case ), the **fine-tuned DistilBERT model achieves significantly higher confidence** (often 85–99%) on IMDB sentiment classification.
-This occurs because:
+In this project, the fine-tuned DistilBERT model performs significantly better, often producing high-confidence predictions (85–99%) on the IMDB sentiment dataset.
+This happens because:
 
-* IMDB sentiment is a well-understood and relatively simple dataset
-* DistilBERT adapts effectively when fine-tuned with LoRA
-* The model learns strong signal patterns from the dataset
+IMDB sentiment classification is a relatively easy dataset
 
-As a result, the system may frequently produce high-confidence predictions that bypass fallback.
+DistilBERT adapts very well during LoRA fine-tuning
 
+The model learns strong sentiment patterns
+
+Clear negative/positive sentences get classified with very high certainty
+
+As a result:
+
+High-confidence examples skip fallback (correct behavior)
+
+Ambiguous examples trigger fallback (as shown in the screenshot)
+
+This is expected and confirms that the model is trained properly and the DAG logic is functioning correctly.
+
+To force the fallback for demo purposes, the confidence threshold can be temporarily increased (e.g., from 0.70 → 0.99), or ambiguous sentences can be used.
 
 ---
 ## **Overview**
