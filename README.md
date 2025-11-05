@@ -300,7 +300,7 @@ Saved in the `logs/` directory.
 
 ---
 
-## **Evaluation Mapping (ATG Requirements)**
+## **Evaluation Mapping **
 
 | Requirement                   | Status      |
 | ----------------------------- | ----------- |
