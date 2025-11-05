@@ -1,3 +1,6 @@
+# -------------------------------
+# Python cache + build artifacts
+# -------------------------------
 __pycache__/
 *.pyc
 *.pyo
@@ -6,16 +9,28 @@ __pycache__/
 *.egg-info/
 *$py.class
 
+# -------------------------------
+# Virtual environments
+# -------------------------------
 myenv/
 env/
 venv/
 
-logs/
-*.log
-*.jsonl
-*.csv
-logs/*.png
+# -------------------------------
+# Logs & artifacts generated during runs
+# Allow sample logs for deliverables, but ignore future runs
+# -------------------------------
+logs/*
+!logs/classification.csv
+!logs/classification.jsonl
+!logs/confidence_histogram.png
+!logs/confidence_curve.png
+!logs/fallback_stats.png
 
+# -------------------------------
+# Model weights (large files)
+# Keep out of repo — provide Drive link instead
+# -------------------------------
 models/checkpoints/
 *.bin
 *.pt
@@ -24,13 +39,30 @@ models/checkpoints/
 models/lora_finetuned/pytorch_model.bin
 models/lora_finetuned/adapter_model.bin
 
+# -------------------------------
+# HuggingFace / Transformers cache
+# -------------------------------
 .cache/
 huggingface/
 transformers/
 
+# -------------------------------
+# System / Editor files
+# -------------------------------
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
+# -------------------------------
+# Notebook checkpoints
+# -------------------------------
 .ipynb_checkpoints/
+
+# -------------------------------
+# Data folder:
+# NOT uploaded raw or train CSV (too large)
+# Keep folder tracked but exclude heavy files
+# -------------------------------
+data/*
+!data/README.md         # Optional if you want a placeholder

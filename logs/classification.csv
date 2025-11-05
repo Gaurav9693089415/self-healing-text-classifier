@@ -1,0 +1,566 @@
+timestamp,event,text,prediction,confidence,source,note
+2025-11-04 17:58:59,TrainingCompleted,Dataset,N/A,1.0,training,"epochs=2, batch_size=16"
+2025-11-04 17:59:31,TrainingCompleted,Dataset,N/A,1.0,training,"epochs=2, batch_size=16"
+2025-11-04 18:01:10,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:01:10,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:01:10,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,User input: 
+2025-11-04 18:01:10,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 18:08:05,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:08:05,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:08:08,BackupModel,The movie was painfully slow and boring.,negative,0.994,backup,backup_stage
+2025-11-04 18:08:09,FinalDecision,The movie was painfully slow and boring.,negative,0.994,backup,pipeline_end
+2025-11-04 18:19:59,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:19:59,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:20:00,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,User input: 
+2025-11-04 18:20:00,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 18:31:46,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:31:46,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:32:01,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,User input: no
+2025-11-04 18:32:01,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 18:33:55,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:33:55,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:40:02,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,User input: exit
+2025-11-04 18:40:02,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 18:40:21,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:40:21,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:41:39,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,User input: exit
+2025-11-04 18:41:39,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 18:42:08,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 18:42:08,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 18:42:38,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,"User input: yes, it was definitely negative."
+2025-11-04 18:42:38,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 19:15:35,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:15:35,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:16:06,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"User input: yes, it was definitely negative."
+2025-11-04 19:16:06,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:28:49,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:28:49,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:29:01,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"User input: yes, it was definitely negative."
+2025-11-04 19:29:01,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:37:32,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:37:32,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:37:44,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"User input: yes, it was definitely negative."
+2025-11-04 19:37:44,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:39:52,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:39:52,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:40:03,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"User input: yes, it was definitely negative."
+2025-11-04 19:40:03,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:42:35,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:42:35,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:42:41,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=yes, it was definitely negative."
+2025-11-04 19:42:41,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:47:25,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:47:25,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:47:30,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=yes, it was definitely negative."
+2025-11-04 19:47:30,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:48:07,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:48:07,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:48:38,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=no, it was not negative"
+2025-11-04 19:48:38,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:51:23,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:51:23,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:51:37,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=yes, it was definitely negative."
+2025-11-04 19:51:37,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:51:43,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:51:43,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:51:55,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=no, it was not negative"
+2025-11-04 19:51:55,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:53:13,Inference,"yes, it was definitely negative.",positive,0.5233,primary,
+2025-11-04 19:53:13,ConfidenceCheck,"yes, it was definitely negative.",positive,0.5233,primary,LOW_CONFIDENCE
+2025-11-04 19:53:24,FallbackUser,"yes, it was definitely negative.",positive,0.5233,user,user_input=exit
+2025-11-04 19:53:24,FinalDecision,"yes, it was definitely negative.",positive,0.5233,user,pipeline_end
+2025-11-04 19:53:45,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:53:45,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:53:49,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=yes, it was definitely negative."
+2025-11-04 19:53:49,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:53:56,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:53:56,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:54:16,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,"user_input=no,it was not negative"
+2025-11-04 19:54:16,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 19:54:47,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:54:47,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:54:52,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,user_input=yes
+2025-11-04 19:54:52,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 19:55:04,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:55:04,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:55:18,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,user_input=no
+2025-11-04 19:55:18,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 19:55:24,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 19:55:24,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 19:55:44,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,user_input=i can't say
+2025-11-04 19:55:44,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 20:10:55,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 20:10:55,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 20:11:00,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,user,"user_input=yes, it was definitely negative., status=corrected"
+2025-11-04 20:11:00,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,user,pipeline_end
+2025-11-04 20:11:08,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 20:11:08,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 20:11:22,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,"user_input=no, it was positive., status=corrected"
+2025-11-04 20:11:22,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 20:11:33,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 20:11:33,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 20:11:49,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,"user_input=i don't know., status=corrected"
+2025-11-04 20:11:49,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 21:28:17,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:28:17,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:28:49,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,user,"user_input=i don't know, status=corrected"
+2025-11-04 21:28:49,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,user,pipeline_end
+2025-11-04 21:30:26,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:30:26,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:30:35,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=No
+2025-11-04 21:30:35,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,pipeline_end
+2025-11-04 21:44:37,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:44:37,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:44:41,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=i don't know.
+2025-11-04 21:44:41,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 21:50:32,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:50:32,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:50:38,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=i can't say
+2025-11-04 21:50:38,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 21:50:52,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:50:52,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:51:12,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=No
+2025-11-04 21:51:12,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 21:51:24,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:51:24,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:51:48,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes, it was absolutely negative"
+2025-11-04 21:51:48,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 21:51:54,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:51:54,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:51:58,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=yes
+2025-11-04 21:51:58,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 21:52:05,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:52:05,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:52:19,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=can't say
+2025-11-04 21:52:19,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 21:58:53,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:58:53,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:59:06,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=don't know
+2025-11-04 21:59:06,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 21:59:29,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 21:59:29,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 21:59:44,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=don't know.
+2025-11-04 21:59:44,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:00:03,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:00:03,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:00:15,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not certain
+2025-11-04 22:00:15,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:01:46,Inference,not certain,positive,0.5163,primary,
+2025-11-04 22:01:46,ConfidenceCheck,not certain,positive,0.5163,primary,LOW_CONFIDENCE
+2025-11-04 22:02:05,FallbackUser,not certain,positive,0.5163,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:02:05,FinalDecision,not certain,positive,0.5163,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:02:10,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:02:10,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:02:15,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not certain
+2025-11-04 22:02:15,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:04:08,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:04:08,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:04:19,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=unsure
+2025-11-04 22:04:19,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:04:29,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:04:29,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:04:42,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not certain
+2025-11-04 22:04:42,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:05:18,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:05:18,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:05:22,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=do not
+2025-11-04 22:05:22,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:05:32,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:05:32,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:05:36,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=can't
+2025-11-04 22:05:36,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:09:55,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:09:55,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:10:05,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=can't say
+2025-11-04 22:10:05,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:10:09,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:10:09,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:10:21,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=don't know
+2025-11-04 22:10:21,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:10:41,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:10:41,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:10:50,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=unsure
+2025-11-04 22:10:50,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:11:09,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:11:09,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:11:14,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=not certain
+2025-11-04 22:11:14,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:11:33,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:11:33,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:11:36,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=perhaps
+2025-11-04 22:11:36,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:11:41,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:11:41,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:11:44,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=idk
+2025-11-04 22:11:44,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:12:09,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:12:09,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:12:24,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,"user_input=Not, absolutely not"
+2025-11-04 22:12:24,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:12:42,Inference,not,positive,0.5285,primary,
+2025-11-04 22:12:42,ConfidenceCheck,not,positive,0.5285,primary,LOW_CONFIDENCE
+2025-11-04 22:12:47,FallbackUser,not,positive,0.5285,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:12:47,FinalDecision,not,positive,0.5285,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:12:51,Inference,no,positive,0.5345,primary,
+2025-11-04 22:12:51,ConfidenceCheck,no,positive,0.5345,primary,LOW_CONFIDENCE
+2025-11-04 22:12:56,FallbackUser,no,positive,0.5345,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:12:56,FinalDecision,no,positive,0.5345,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:13:02,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:13:02,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:13:06,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=not
+2025-11-04 22:13:06,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:13:48,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:13:48,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:13:51,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=no
+2025-11-04 22:13:51,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:14:01,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:14:01,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:14:04,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=not
+2025-11-04 22:14:04,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:14:14,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:14:14,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:14:18,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=yes
+2025-11-04 22:14:18,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:14:39,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:14:39,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:14:52,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=absolutely not
+2025-11-04 22:14:52,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:19:01,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:19:01,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:19:06,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not
+2025-11-04 22:19:06,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:19:13,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:19:13,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:19:17,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=no
+2025-11-04 22:19:17,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:19:21,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:19:21,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:19:25,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=yes
+2025-11-04 22:19:25,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:19:32,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:19:32,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:19:42,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=absolutely not
+2025-11-04 22:19:42,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:19:57,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:19:57,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:20:05,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=yes definitely
+2025-11-04 22:20:05,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:20:39,Inference,"yes, it was definitely negative.",positive,0.5233,primary,
+2025-11-04 22:20:39,ConfidenceCheck,"yes, it was definitely negative.",positive,0.5233,primary,LOW_CONFIDENCE
+2025-11-04 22:20:45,FallbackUser,"yes, it was definitely negative.",positive,0.5233,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:20:45,FinalDecision,"yes, it was definitely negative.",positive,0.5233,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:21:06,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:21:06,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:21:09,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,"user_input=yes, it was definitely negative."
+2025-11-04 22:21:09,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:23:57,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:23:57,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:24:22,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes, it was definitely negative."
+2025-11-04 22:24:22,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:24:31,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:24:31,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:24:34,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=no
+2025-11-04 22:24:34,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:24:40,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:24:40,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:24:44,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not
+2025-11-04 22:24:44,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:24:49,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:24:49,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:24:55,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,uncertain,user_input=yes definitely
+2025-11-04 22:24:55,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:28:05,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:28:05,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:28:10,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes, it was definitely negative."
+2025-11-04 22:28:10,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:28:18,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:28:18,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:28:21,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=no
+2025-11-04 22:28:21,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:28:31,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:28:31,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:28:42,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=yes
+2025-11-04 22:28:42,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:28:50,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:28:50,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:28:53,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not
+2025-11-04 22:28:53,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:29:09,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:29:09,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:29:16,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes, definitely"
+2025-11-04 22:29:16,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:29:41,Inference,definitely not,positive,0.5266,primary,
+2025-11-04 22:29:41,ConfidenceCheck,definitely not,positive,0.5266,primary,LOW_CONFIDENCE
+2025-11-04 22:29:46,FallbackUser,definitely not,positive,0.5266,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:29:46,FinalDecision,definitely not,positive,0.5266,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:29:52,Inference,definitely not,positive,0.5266,primary,
+2025-11-04 22:29:52,ConfidenceCheck,definitely not,positive,0.5266,primary,LOW_CONFIDENCE
+2025-11-04 22:29:57,FallbackUser,definitely not,positive,0.5266,uncertain,user_input=The movie was painfully slow and boring.
+2025-11-04 22:29:57,FinalDecision,definitely not,positive,0.5266,uncertain,(Model prediction retained — user unsure)
+2025-11-04 22:30:02,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:30:02,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:30:09,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=definitely not
+2025-11-04 22:30:09,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:34:27,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:34:27,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:34:39,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=never
+2025-11-04 22:34:39,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:34:43,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:34:43,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:34:52,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,user_input=definitely not
+2025-11-04 22:34:52,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:36:32,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:36:32,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:36:41,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=definitely not
+2025-11-04 22:36:41,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:36:51,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:36:51,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:37:16,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes, definitely"
+2025-11-04 22:37:16,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:37:23,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:37:23,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:37:26,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=not
+2025-11-04 22:37:26,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:38:06,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:38:06,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:38:11,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=no
+2025-11-04 22:38:11,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:38:15,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:38:15,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:38:18,FallbackUser,The movie was painfully slow and boring.,positive,0.5206,corrected,user_input=never
+2025-11-04 22:38:18,FinalDecision,The movie was painfully slow and boring.,positive,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:38:22,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:38:22,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:38:30,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=yes , absolutely"
+2025-11-04 22:38:30,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 22:38:39,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 22:38:39,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 22:39:11,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=Yes, it was definitely negative."
+2025-11-04 22:39:11,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 23:08:29,Inference,The movie was painfully slow and boring.,positive,0.5206,primary,
+2025-11-04 23:08:29,ConfidenceCheck,The movie was painfully slow and boring.,positive,0.5206,primary,LOW_CONFIDENCE
+2025-11-04 23:08:54,FallbackUser,The movie was painfully slow and boring.,negative,0.5206,corrected,"user_input=Yes, it was definitely negative."
+2025-11-04 23:08:54,FinalDecision,The movie was painfully slow and boring.,negative,0.5206,corrected,(Corrected via user clarification)
+2025-11-04 23:55:30,System,"Training started: csv=data/train.csv, epochs=2, batch_size=16",N/A,,system,level=INFO
+2025-11-04 23:56:47,System,Training failed: TrainingArguments.__init__() got an unexpected keyword argument 'evaluation_strategy',N/A,,system,level=ERROR
+2025-11-05 00:00:48,System,"Training started: csv=data/train.csv, epochs=2, batch_size=16",N/A,,system,level=INFO
+2025-11-05 00:01:45,System,Training failed: TrainingArguments.__init__() got an unexpected keyword argument 'evaluation_strategy',N/A,,system,level=ERROR
+2025-11-05 00:05:45,System,Training started (csv=data/train.csv),N/A,,system,level=INFO
+2025-11-05 00:32:39,System,Training started: data/imdb.csv,N/A,,system,level=INFO
+2025-11-05 00:32:39,System,Training failed: Dataset not found: data/imdb.csv,N/A,,system,level=ERROR
+2025-11-05 01:01:23,System,Training started with dataset: .\data\train.csv,N/A,,system,level=INFO
+2025-11-05 03:02:40,TrainingCompleted,train.csv,N/A,1.0,training,eval_loss=0.3507
+2025-11-05 03:10:01,Inference,python scripts/run_cli.py,negative,0.6123,primary,
+2025-11-05 03:10:01,ConfidenceCheck,python scripts/run_cli.py,negative,0.6123,primary,LOW_CONFIDENCE
+2025-11-05 03:10:15,FallbackUser,python scripts/run_cli.py,negative,0.6123,uncertain,user_input=exit
+2025-11-05 03:10:15,FinalDecision,python scripts/run_cli.py,negative,0.6123,uncertain,(Model prediction retained — user unsure)
+2025-11-05 03:11:02,Inference,The movie was amazing!,positive,0.9944,primary,
+2025-11-05 03:11:02,FinalDecision,The movie was amazing!,positive,0.9944,primary,(Model prediction retained — user unsure)
+2025-11-05 03:13:21,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 03:13:21,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(Model prediction retained — user unsure)
+2025-11-05 03:17:59,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 03:17:59,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 03:18:13,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=not sure
+2025-11-05 03:18:13,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:17:42,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 12:17:42,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 12:18:59,Inference,The movie was absolutely fantastic and I loved every moment of it.,positive,0.999,primary,
+2025-11-05 12:18:59,FinalDecision,The movie was absolutely fantastic and I loved every moment of it.,positive,0.999,primary,(High-confidence model prediction)
+2025-11-05 12:19:15,Inference,This was one of the worst movies I have ever watched.,negative,0.8156,primary,
+2025-11-05 12:19:15,FinalDecision,This was one of the worst movies I have ever watched.,negative,0.8156,primary,(High-confidence model prediction)
+2025-11-05 12:19:39,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:19:39,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:20:05,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=not sure
+2025-11-05 12:20:05,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 12:20:14,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:20:14,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:20:18,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 12:20:18,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:20:51,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:20:51,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:21:00,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=definitely not
+2025-11-05 12:21:00,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:21:09,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:21:09,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:21:16,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=absolutely
+2025-11-05 12:21:16,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 12:21:44,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:21:44,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:21:49,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=definitely
+2025-11-05 12:21:49,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 12:22:21,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:22:21,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:22:28,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=definitely not
+2025-11-05 12:22:28,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:31:34,Inference,clear,positive,0.9188,primary,
+2025-11-05 12:31:34,FinalDecision,clear,positive,0.9188,primary,(High-confidence model prediction)
+2025-11-05 12:32:30,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:32:30,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:32:44,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=definitely
+2025-11-05 12:32:44,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:32:52,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:32:52,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:32:57,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=not sure
+2025-11-05 12:32:57,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 12:33:14,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:33:14,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:33:22,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=i dont know
+2025-11-05 12:33:22,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 12:33:36,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:33:36,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:33:38,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 12:33:38,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:57:51,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:57:51,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:58:07,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 12:58:07,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:58:13,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 12:58:13,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 12:58:25,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=definitely
+2025-11-05 12:58:25,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 12:58:48,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 12:58:48,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 12:59:12,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 12:59:12,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 13:11:06,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 13:11:07,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 13:11:41,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=not sure
+2025-11-05 13:11:42,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 13:11:57,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 13:11:58,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 13:12:23,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=no
+2025-11-05 13:12:24,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 13:13:07,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 13:13:08,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 13:13:12,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 13:13:13,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 13:31:18,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 13:31:19,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 13:43:32,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 13:43:32,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 13:44:43,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 13:44:43,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 13:44:59,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 13:44:59,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 13:54:30,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 13:54:30,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 13:54:37,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 13:54:37,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:00:54,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:00:54,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:01:03,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=no
+2025-11-05 14:01:03,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:01:08,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:01:08,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:01:10,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 14:01:10,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:11:15,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:11:15,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:11:20,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=No
+2025-11-05 14:11:20,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:11:26,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:11:26,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:11:40,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,"user_input=yes,off course"
+2025-11-05 14:11:40,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:11:49,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:11:49,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:11:57,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=Not sure
+2025-11-05 14:11:57,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 14:12:10,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:12:10,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:12:19,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=Not sure
+2025-11-05 14:12:19,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 14:14:54,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:14:54,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:14:57,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=may be
+2025-11-05 14:14:57,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 14:15:10,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:15:10,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:15:15,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=definitely
+2025-11-05 14:15:15,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 14:15:23,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 14:15:23,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 14:15:47,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,"user_input=Yes, it was definitely positive."
+2025-11-05 14:15:47,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 15:57:12,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 15:57:12,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 15:57:23,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,corrected,user_input=No
+2025-11-05 15:57:23,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 15:57:31,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 15:57:31,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 15:57:40,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,"user_input=yes, definitely"
+2025-11-05 15:57:40,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 15:57:47,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 15:57:47,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 15:57:56,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=may be
+2025-11-05 15:57:56,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 16:06:02,Inference,"It was quite good, I guess.",positive,0.8491,primary,
+2025-11-05 16:06:02,FinalDecision,"It was quite good, I guess.",positive,0.8491,primary,(High-confidence model prediction)
+2025-11-05 16:06:50,Inference,"It was quite good, I guess.",positive,0.8491,primary,
+2025-11-05 16:06:50,FinalDecision,"It was quite good, I guess.",positive,0.8491,primary,(High-confidence model prediction)
+2025-11-05 16:06:59,Inference,"It was quite good, I guess.",positive,0.8491,primary,
+2025-11-05 16:06:59,FinalDecision,"It was quite good, I guess.",positive,0.8491,primary,(High-confidence model prediction)
+2025-11-05 16:07:06,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 16:07:06,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 16:07:10,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=yes
+2025-11-05 16:07:10,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 16:07:28,Inference,This was one of the worst movies I’ve ever seen in my life.,negative,0.7888,primary,
+2025-11-05 16:07:28,FinalDecision,This was one of the worst movies I’ve ever seen in my life.,negative,0.7888,primary,(High-confidence model prediction)
+2025-11-05 16:07:46,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 16:07:46,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 16:07:51,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=not sure
+2025-11-05 16:07:51,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 16:08:00,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 16:08:00,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 16:08:05,FallbackUser,The movie was okay but also kind of boring.,positive,0.5693,corrected,user_input=definitely
+2025-11-05 16:08:05,FinalDecision,The movie was okay but also kind of boring.,positive,0.5693,corrected,(Corrected via user clarification)
+2025-11-05 16:08:17,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 16:08:17,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 16:08:20,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=may be
+2025-11-05 16:08:20,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 16:08:26,Inference,The movie was okay but also kind of boring.,negative,0.5693,primary,
+2025-11-05 16:08:26,ConfidenceCheck,The movie was okay but also kind of boring.,negative,0.5693,primary,LOW_CONFIDENCE
+2025-11-05 16:08:32,FallbackUser,The movie was okay but also kind of boring.,negative,0.5693,uncertain,user_input=can't say
+2025-11-05 16:08:32,FinalDecision,The movie was okay but also kind of boring.,negative,0.5693,uncertain,(Model prediction retained — user unsure)
+2025-11-05 17:58:32,Inference,"The movie was okay, but also kind of boring in some parts.",negative,0.7422,primary,
+2025-11-05 17:58:32,FinalDecision,"The movie was okay, but also kind of boring in some parts.",negative,0.7422,primary,(High-confidence model prediction)
+2025-11-05 17:59:01,Inference,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,
+2025-11-05 17:59:01,ConfidenceCheck,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,LOW_CONFIDENCE
+2025-11-05 17:59:17,FallbackUser,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,uncertain,user_input=may be
+2025-11-05 17:59:17,FinalDecision,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,uncertain,(Model prediction retained — user unsure)
+2025-11-05 18:03:46,Inference,The movie was painfully slow and boring,negative,0.9777,primary,
+2025-11-05 18:03:46,FinalDecision,The movie was painfully slow and boring,negative,0.9777,primary,(High-confidence model prediction)
+2025-11-05 18:05:46,Inference,"I appreciate the effort, but the movie didn’t work for me.",negative,0.9167,primary,
+2025-11-05 18:05:46,FinalDecision,"I appreciate the effort, but the movie didn’t work for me.",negative,0.9167,primary,(High-confidence model prediction)
+2025-11-05 18:07:09,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 18:07:09,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 18:07:30,Inference,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,
+2025-11-05 18:07:30,ConfidenceCheck,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,LOW_CONFIDENCE
+2025-11-05 18:08:10,FallbackUser,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,corrected,"user_input=yes, it was definitely negative."
+2025-11-05 18:08:10,FinalDecision,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,corrected,(Corrected via user clarification)
+2025-11-05 18:13:02,Inference,The movie was painfully slow and boring,negative,0.9777,primary,
+2025-11-05 18:13:02,FinalDecision,The movie was painfully slow and boring,negative,0.9777,primary,(High-confidence model prediction)
+2025-11-05 18:13:07,Inference,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,
+2025-11-05 18:13:07,ConfidenceCheck,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,LOW_CONFIDENCE
+2025-11-05 18:13:26,FallbackUser,"I feel mixed about the movie, not sure how I feel.",positive,0.5227,corrected,"user_input=yes,it was definitely posotive."
+2025-11-05 18:13:26,FinalDecision,"I feel mixed about the movie, not sure how I feel.",positive,0.5227,corrected,(Corrected via user clarification)
+2025-11-05 22:19:23,Inference,,positive,0.76,primary,
+2025-11-05 22:19:23,FinalDecision,,positive,0.76,primary,(High-confidence model prediction)
+2025-11-05 22:19:36,Inference,This movie was fantastic.,positive,0.9787,primary,
+2025-11-05 22:19:36,FinalDecision,This movie was fantastic.,positive,0.9787,primary,(High-confidence model prediction)
+2025-11-05 22:20:38,Inference,The movie was painfully slow and boring.,negative,0.9688,primary,
+2025-11-05 22:20:38,FinalDecision,The movie was painfully slow and boring.,negative,0.9688,primary,(High-confidence model prediction)
+2025-11-05 22:22:11,Inference,"The movie was okay, not too bad but not great either",positive,0.66,primary,
+2025-11-05 22:22:11,ConfidenceCheck,"The movie was okay, not too bad but not great either",positive,0.66,primary,LOW_CONFIDENCE
+2025-11-05 22:23:14,FallbackUser,"The movie was okay, not too bad but not great either",negative,0.66,corrected,"user_input=yes,it was definitely negative"
+2025-11-05 22:23:14,FinalDecision,"The movie was okay, not too bad but not great either",negative,0.66,corrected,(Corrected via user clarification)
+2025-11-05 22:25:44,Inference,"The movie was okay, not too bad but not great either.",positive,0.7273,primary,
+2025-11-05 22:25:44,FinalDecision,"The movie was okay, not too bad but not great either.",positive,0.7273,primary,(High-confidence model prediction)
+2025-11-05 22:26:33,Inference,"I appreciate the effort, but the movie didn’t work for me",negative,0.8622,primary,
+2025-11-05 22:26:33,FinalDecision,"I appreciate the effort, but the movie didn’t work for me",negative,0.8622,primary,(High-confidence model prediction)
+2025-11-05 22:26:50,Inference,This was one of the worst movies I’ve ever seen in my life.,negative,0.7888,primary,
+2025-11-05 22:26:50,FinalDecision,This was one of the worst movies I’ve ever seen in my life.,negative,0.7888,primary,(High-confidence model prediction)
+2025-11-05 22:27:12,Inference,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,
+2025-11-05 22:27:12,ConfidenceCheck,"I feel mixed about the movie, not sure how I feel.",negative,0.5227,primary,LOW_CONFIDENCE
+2025-11-05 22:27:12,BackupModel,"I feel mixed about the movie, not sure how I feel.",negative,0.7713,backup,backup_stage
+2025-11-05 22:27:12,FinalDecision,"I feel mixed about the movie, not sure how I feel.",negative,0.7713,backup,(Final label chosen via backup model)
