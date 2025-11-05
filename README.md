@@ -2,26 +2,24 @@
 
 A production-ready sentiment classification pipeline built with **LoRA fine-tuned DistilBERT** and **LangGraph workflow orchestration**. The system implements intelligent fallback mechanisms to handle uncertain predictions through human-in-the-loop interaction and optional backup model consultation.
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This system goes beyond traditional classification by implementing a **self-healing architecture** that:
 
-- ✅ Performs high-accuracy sentiment analysis using a fine-tuned transformer model
-- 🔄 Automatically detects low-confidence predictions and triggers fallback strategies
-- 👤 Engages users for clarification when model uncertainty is detected
-- 🔍 Optionally consults a backup zero-shot classifier (BART-MNLI) for validation
-- 📊 Maintains comprehensive structured logs (CSV + JSONL) for analysis
+-  Performs high-accuracy sentiment analysis using a fine-tuned transformer model
+-  Automatically detects low-confidence predictions and triggers fallback strategies
+-  Engages users for clarification when model uncertainty is detected
+-  Optionally consults a backup zero-shot classifier (BART-MNLI) for validation
+-  Maintains comprehensive structured logs (CSV + JSONL) for analysis
 
 **Key Innovation**: Rather than blindly accepting all predictions, the system prioritizes **correctness over automation** by intelligently seeking human guidance when confidence is low.
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -73,7 +71,7 @@ This system goes beyond traditional classification by implementing a **self-heal
 
 ---
 
-## 📊 Features
+##  Features
 
 ### Core Capabilities
 - **LoRA Fine-Tuning**: Efficient parameter-efficient fine-tuning of DistilBERT
@@ -94,7 +92,7 @@ This system goes beyond traditional classification by implementing a **self-heal
 
 ---
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 SELF_HEALING_CLS/
@@ -149,7 +147,7 @@ SELF_HEALING_CLS/
 
 ---
 
-## 🚀 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -280,7 +278,7 @@ Expected training time:
 
 ---
 
-## 💻 Running the Self-Healing CLI
+##  Running the Self-Healing CLI
 
 ### Basic Usage (User Clarification Only)
 
@@ -303,7 +301,7 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 
 ---
 
-## 🎮 CLI Flow Explanations
+##  CLI Flow Explanations
 
 ### Example Session 1: High Confidence (No Fallback)
 
@@ -323,7 +321,7 @@ Final Label: Positive (High-confidence model prediction)
 2. InferenceNode predicts with 94% confidence
 3. ConfidenceCheckNode accepts (≥70% threshold)
 4. FinalizeNode outputs result
-5. No fallback triggered ✅
+5. No fallback triggered 
 
 ---
 
@@ -346,7 +344,7 @@ Final Label: Negative (Corrected via user clarification)
 2. ConfidenceCheckNode triggers fallback (<70%)
 3. FallbackNode asks for clarification
 4. User confirms opposite label
-5. System corrects to "Negative" ✅
+5. System corrects to "Negative" 
 
 ---
 
@@ -368,7 +366,7 @@ Final Label: Negative (Model prediction retained — user unsure)
 1. Model predicts "Negative" with 58% confidence
 2. Fallback triggered
 3. User expresses uncertainty
-4. System retains original prediction but marks as uncertain ⚠️
+4. System retains original prediction but marks as uncertain 
 
 ---
 
@@ -391,7 +389,7 @@ Final Label: Negative (Corrected via user clarification)
 1. Primary model uncertain (55%)
 2. Backup zero-shot model consulted (82% for "Negative")
 3. User still prompted for final confirmation
-4. User agrees with backup model assessment ✅
+4. User agrees with backup model assessment 
 
 ---
 
@@ -412,7 +410,7 @@ The system treats user uncertainty respectfully - if you're genuinely unsure, it
 
 ---
 
-## 📈 Log Analysis
+##  Log Analysis
 
 ### Generating Visualizations
 
@@ -434,21 +432,7 @@ python scripts/analyze_logs.py
    - Bar chart: Normal predictions vs. Fallback triggers
    - Quantifies system intervention frequency
 
-### Log Files
 
-**CSV Format** (`logs/classification.csv`):
-```csv
-timestamp,event,text,prediction,confidence,source,note
-2024-11-05 14:32:10,Inference,Great movie!,positive,0.9234,primary,
-2024-11-05 14:32:45,ConfidenceCheck,Mixed feelings...,positive,0.5421,primary,LOW_CONFIDENCE
-2024-11-05 14:33:02,FallbackUser,Mixed feelings...,negative,0.5421,corrected,user_input=yes
-```
-
-**JSONL Format** (`logs/classification.jsonl`):
-```json
-{"timestamp": "2024-11-05 14:32:10", "event": "Inference", "text": "Great movie!", "prediction": "positive", "confidence": 0.9234, "source": "primary", "note": ""}
-{"timestamp": "2024-11-05 14:32:45", "event": "ConfidenceCheck", "text": "Mixed feelings...", "prediction": "positive", "confidence": 0.5421, "source": "primary", "note": "LOW_CONFIDENCE"}
-```
 
 ---
 
@@ -491,22 +475,7 @@ LORA_ALPHA = 16
 
 ---
 
-## 🎯 Why LangGraph?
-
-LangGraph was chosen for workflow orchestration because it provides:
-
-1. **Modular Architecture**: Clean separation of concerns across nodes
-2. **Deterministic Routing**: Transparent, confidence-based decision logic
-3. **State Management**: Shared state object passed through pipeline
-4. **Human-in-the-Loop**: Natural integration of interactive fallbacks
-5. **Visualization**: DAG structure makes system behavior clear
-6. **Extensibility**: Easy to add new nodes (e.g., multi-model voting)
-
-**Alternative considered:** Traditional if-else chains would become unmaintainable as complexity grows.
-
----
-
-## 🧪 Code Quality
+##  Code Quality
 
 ### Linting
 
@@ -543,59 +512,6 @@ The codebase follows PEP 8 standards with:
 
 ---
 
-## 🚧 Troubleshooting
-
-### Common Issues
-
-**1. CUDA Out of Memory**
-```bash
-# Reduce batch size
-python scripts/train.py --batch_size 8
-```
-
-**2. Import Errors**
-```bash
-# Ensure you're in project root and venv is activated
-cd SELF_HEALING_CLS
-myenv\Scripts\activate  # Windows
-source myenv/bin/activate  # Linux/Mac
-```
-
-**3. Model Not Found**
-```bash
-# Verify model path
-python scripts/run_cli.py --model_path ./models/lora_finetuned
-```
-
-**4. Tokenizer Warnings**
-```bash
-# These are informational and can be ignored
-# Or set explicitly: export TOKENIZERS_PARALLELISM=false
-```
-
----
-
-## 🔮 Future Enhancements
-
-Potential extensions:
-- [ ] Multi-class classification support
-- [ ] Ensemble voting with multiple backup models
-- [ ] Real-time confidence calibration
-- [ ] Web API deployment (FastAPI)
-- [ ] Active learning loop for model improvement
-- [ ] Multi-language support
-- [ ] Explainability features (LIME/SHAP)
-
----
-
-## 📚 References
-
-- [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
-- [DistilBERT](https://arxiv.org/abs/1910.01108)
-- [LangGraph Documentation](https://python.langchain.com/docs/langgraph)
-- [IMDB Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)
-
----
 
 ## 📄 License
 
@@ -603,7 +519,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 👤 Author
+##  Author
 
 **Gaurav Kumar**
 
@@ -612,22 +528,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🙏 Acknowledgments
 
-- **Anthropic** for the technical assignment opportunity
-- **HuggingFace** for transformer models and training infrastructure
-- **LangChain Team** for LangGraph workflow orchestration
-- **IMDB** for the sentiment analysis dataset
 
----
-
-## 📞 Support
-
-For questions or issues:
-1. Check the [Troubleshooting](#-troubleshooting) section
-2. Review existing [GitHub Issues](https://github.com/Gaurav9693089415/self-healing-text-classifier/issues)
-3. Open a new issue with detailed error logs
-
----
-
-**Built with ❤️ for robust, production-ready ML systems**
