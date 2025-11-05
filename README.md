@@ -1,107 +1,127 @@
 
 
-# **Self-Healing Text Classification System**
-
-A confidence-aware sentiment classification pipeline built using a **LoRA fine-tuned DistilBERT model** and a **LangGraph-based DAG**.
-The system identifies low-confidence predictions and automatically “self-heals” by:
-
-• Escalating to a backup zero-shot classifier
-• Requesting clarification from the user
-• Logging and finalizing the corrected label
 
 ---
 
-# **Features**
+# Self-Healing Text Classification System
 
-• LoRA-fine-tuned DistilBERT classifier
-• LangGraph-based self-healing DAG
-• Confidence-based decision routing
-• Human-in-the-loop fallback mechanism
-• Optional backup model (zero-shot BART-MNLI)
-• Color-coded interactive CLI
-• Structured logs in CSV and JSONL
-• Analytics utilities for log visualization
+A confidence-aware sentiment classification pipeline built using a **LoRA fine-tuned DistilBERT model** and a **LangGraph-based DAG workflow**.
+The system prevents incorrect predictions by intelligently handling low-confidence outputs through:
+
+* Backup zero-shot model escalation
+* User clarification
+* Structured logging and final decision routing
 
 ---
 
-# **System Architecture**
+## Demo Output (Screenshot Example)
 
-## **LangGraph DAG in This Project**
+Below is a real sample of the CLI output showing inference, fallback, and final decisions.
 
-The workflow is modeled as a **deterministic DAG**, where each processing step is represented as a node:
+<p align="left">
+  <img src="dag_diagram.png" alt="Self-Healing DAG" width="500"/>
+</p>
 
-• **InferenceNode** – runs the fine-tuned classifier
-• **ConfidenceCheckNode** – evaluates prediction confidence
-• **FallbackNode** – performs user clarification or backup inference
-• **FinalizeNode** – produces and logs the final decision
+---
+
+## Features
+
+* LoRA fine-tuned DistilBERT sentiment model
+* LangGraph DAG with deterministic, confidence-based routing
+* Human-in-the-loop fallback mechanism
+* Optional backup zero-shot classifier (BART-MNLI)
+* Interactive CLI with clean colored output
+* Structured CSV + JSONL logs
+* Log analysis with histograms, trends, fallback stats
+* Code formatted with `black` and linted with `flake8`
+
+---
+
+## System Architecture
+
+### Workflow Overview
+
+The self-healing classifier is modeled as a **LangGraph Directed Acyclic Graph (DAG)**:
+
+```
+InferenceNode → ConfidenceCheckNode → (FallbackNode) → FinalizeNode
+```
 
 ### Why LangGraph?
 
-• Clear and testable modular components
-• Explicit control flow based on confidence thresholds
-• Built-in structure for human-in-the-loop workflows
-• Ensures correctness-first behavior for production scenarios
-
-## **Human-in-the-Loop Justification**
-
-When the model confidence is low, automated classification is avoided.
-Instead, the system asks the user a clarifying question such as:
-
-“Was this a positive review?”
-
-This guarantees:
-
-• Reduced risk of incorrect outputs
-• Transparent recovery strategy
-• Responsible and interpretable AI behavior
+* Enforces modular, transparent data flow
+* Guarantees deterministic routing based on confidence thresholds
+* Makes human-in-the-loop fallback easy to integrate
+* Helps structure complex classification pipelines into clean nodes
 
 ---
 
-# **DAG Diagram**
+## Human-in-the-Loop Logic
 
-<img src="./dag_diagram.png" width="480" height="350" />
+If model confidence is below the threshold:
+
+* The system asks the user to clarify the sentiment
+* If the user is uncertain, the model retains the original prediction but marks it accordingly
+* If a backup model is enabled, it is used for secondary classification
+
+This ensures correctness-first behavior.
 
 ---
 
-# **Project Structure**
+## DAG Diagram
+
+<p align="center">
+  <img src="./dag_diagram.png" alt="DAG Diagram" width="700"/>
+</p>
+
+---
+
+## Project Structure
 
 ```
 self_healing_cls/
-│── data/
-│── models/
-│── nodes/
+├── data/
+├── models/
+├── nodes/
 │   ├── inference.py
 │   ├── confidence.py
 │   ├── fallback.py
 │   └── finalize.py
-│── graphs/
+├── graphs/
 │   └── classification_dag.py
-│── scripts/
+├── scripts/
 │   ├── train.py
 │   ├── run_cli.py
 │   ├── analyze_logs.py
 │   └── load_backup.py
-│── utils/
+├── utils/
 │   ├── config.py
 │   └── logger.py
-│── logs/
-│── dag_diagram.png
-│── README.md
-│── requirements.txt
+├── logs/
+├── dag_diagram.png
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-# **Installation**
+## Installation & Setup
 
-## 1. Create Virtual Environment
+### 1. Clone the repository
+
+```
+git clone https://github.com/<your-username>/self-healing-text-classifier.git
+cd self-healing-text-classifier
+```
+
+### 2. Create and activate a virtual environment
 
 ```
 python -m venv myenv
 myenv\Scripts\activate
 ```
 
-## 2. Install Dependencies
+### 3. Install dependencies
 
 ```
 pip install -r requirements.txt
@@ -109,7 +129,7 @@ pip install -r requirements.txt
 
 ---
 
-# **Fine-Tuning the Model (LoRA)**
+## Fine-Tuning the Model (LoRA)
 
 Dataset format:
 
@@ -119,19 +139,19 @@ I loved this movie!,1
 This was bad.,0
 ```
 
-## Train on the full dataset
+### Train on the full dataset
 
 ```
 python scripts/train.py --csv data/train.csv
 ```
 
-## Train on a smaller sample
+### Train using a faster sample
 
 ```
 python scripts/train.py --csv data/train.csv --sample_size 2000
 ```
 
-Model is saved to:
+Fine-tuned model is saved in:
 
 ```
 models/lora_finetuned/
@@ -139,94 +159,85 @@ models/lora_finetuned/
 
 ---
 
-# **Running the Self-Healing CLI**
+## Running the Self-Healing CLI
 
-## Standard Mode (User Clarification Fallback)
+### Standard Mode (user clarification fallback)
 
 ```
 python scripts/run_cli.py --model_path models/lora_finetuned
 ```
 
-## With Backup Zero-Shot Model
+### With backup zero-shot classifier
 
 ```
 python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 ```
 
-## Example CLI Session
+### Example CLI Session
 
 ```
-Input: The movie was painfully slow and boring.
-
-[InferenceNode] Predicted: Negative | Confidence: 98%
-Final Label: Negative (High-confidence model prediction)
-
-
-Input: I feel mixed about the movie, not sure how I feel.
+Input: The movie was painfully slow and boring
 
 [InferenceNode] Predicted: Negative | Confidence: 52%
 [ConfidenceCheckNode] Confidence too low → triggering fallback...
-[FallbackNode] Could you clarify your intent? Was this a positive review?
+[FallbackNode] Could you clarify? Was this a positive review?
 
-User: yes, it was definitely positive.
+User: Yes, it was positive.
 
 Final Label: Positive (Corrected via user clarification)
-
-Input: exit
-Exiting... Goodbye!
 ```
 
 ---
 
-# **Log Analysis**
+## Log Analysis
 
-Run:
+Generate charts:
 
 ```
 python scripts/analyze_logs.py
 ```
 
-Generates:
+Saved to `/logs/`:
 
-• confidence_histogram.png
-• confidence_curve.png
-• fallback_stats.png
-
-All saved inside the `logs/` directory.
+* confidence_histogram.png
+* confidence_curve.png
+* fallback_stats.png
 
 ---
 
-# **Evaluation Mapping**
+## Evaluation Mapping
 
-| Requirement                         | Status            |
-| ----------------------------------- | ----------------- |
-| Fine-tuned transformer model        | Completed         |
-| Confidence-based fallback mechanism | Implemented       |
-| Interactive CLI                     | Implemented       |
-| LangGraph-based DAG                 | Fully implemented |
-| Structured logging                  | CSV + JSONL       |
-| Documentation                       | Complete          |
-| Demo video                          | To be added       |
-
----
-
-# **Demo Video**
-
-Add Google Drive or YouTube link here after recording.
+| Requirement                     | Status      |
+| ------------------------------- | ----------- |
+| Fine-tuned transformer model    | Completed   |
+| Self-healing fallback mechanism | Implemented |
+| Interactive CLI                 | Implemented |
+| LangGraph DAG workflow          | Implemented |
+| Structured logging              | CSV + JSONL |
+| README documentation            | Completed   |
+| Demo video                      | To be added |
 
 ---
 
-# **Summary**
+## Summary
 
-This system implements a complete, production-style self-healing sentiment classifier using:
+This project demonstrates a structured **self-healing text classification system** using:
 
-• Transformer fine-tuning with LoRA
-• Confidence-based decision routing
-• Human-in-the-loop fallback strategies
-• Structured logging and analytics
-• Clean and modular LangGraph DAG design
+* LoRA transformer fine-tuning
+* Confidence-based routing
+* Human-in-the-loop fallback logic
+* Modular LangGraph DAG workflows
+* Reproducible logging + analytical visualization
 
-The result is a robust, interpretable classification pipeline suitable for real-world applications.
+Designed for practical, reliable sentiment classification under real-world uncertainty.
 
-```
+---
+
+## Author
+
+**Gaurav Kumar**
+GitHub: [https://github.com/Gaurav9693089415](https://github.com/Gaurav9693089415)
+
+---
+
 
