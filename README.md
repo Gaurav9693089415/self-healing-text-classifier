@@ -15,10 +15,9 @@ The system intelligently handles low-confidence predictions through human-in-the
  
 ##  Demo Output (Screenshot)
 
-Below is the actual CLI output showing real-time debate rounds and the final judge verdict.
-
+Below is an example CLI session showing the real-time self-healing workflow including prediction, confidence evaluation, fallback, and final classification.
 <p align="left">
-  <img src="demo_output.png" alt="CLI Debate Output Screenshot" width="700" height="500"/>
+  <img src="demo_output.png" alt="Self-Healing Classification CLI Output" width="700" height="500"/>
 </p>
 
 ## **Overview**
