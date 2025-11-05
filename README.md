@@ -1,64 +1,89 @@
 
+
 ---
 
 # **Self-Healing Text Classification System**
 
 A production-ready sentiment classification pipeline built using a **LoRA fine-tuned DistilBERT model** and a **LangGraph-based Directed Acyclic Graph (DAG)**.
-The system intelligently handles low-confidence predictions through human-in-the-loop interaction and an optional backup zero-shot classifier, ensuring correctness over blind automation.
-
+The system intelligently handles low-confidence predictions through human-in-the-loop clarification and an optional backup zero-shot classifier, ensuring correctness over blind automation.
 
 ---
-##  Demo Video
 
- **Watch the full working demo here:**  
- [Click to View on Google Drive](https://drive.google.com/file/d/1AGlavGTjuYHzGS0AVRcapcsw_PqAO8yy/view?usp=sharing)
- 
-##  Demo Output (Screenshot)
+## **Demo Output (Screenshot)**
 
-Below is an example CLI session showing the real-time self-healing workflow including prediction, confidence evaluation, fallback, and final classification.
+The following screenshot demonstrates the actual CLI execution of the Self-Healing Classification System, showcasing the complete workflow including inference, confidence checking, fallback, and final decision.
+
 <p align="left">
   <img src="demo_output.png" alt="Self-Healing Classification CLI Output" width="700" height="500"/>
 </p>
 
+---
+---
+
+## **Note on Output Differences ( Assignment Example Vs. Screenshot)**
+
+The assignment example:
+
+```
+Input: The movie was painfully slow and boring.
+[InferenceNode] Predicted label: Positive | Confidence: 54%
+[ConfidenceCheckNode] Confidence too low. Triggering fallback...
+[FallbackNode] Could you clarify your intent? Was this a negative review?
+User: Yes, it was definitely negative.
+Final Label: Negative (Corrected via user clarification)
+```
+
+is an illustrative sample to demonstrate fallback behavior.
+
+In this implementation(in my case ), the **fine-tuned DistilBERT model achieves significantly higher confidence** (often 85–99%) on IMDB sentiment classification.
+This occurs because:
+
+* IMDB sentiment is a well-understood and relatively simple dataset
+* DistilBERT adapts effectively when fine-tuned with LoRA
+* The model learns strong signal patterns from the dataset
+
+As a result, the system may frequently produce high-confidence predictions that bypass fallback.
+
+
+---
 ## **Overview**
 
-Modern text classifiers often produce confident outputs, but when confidence is low, misclassifications become risky.
-This system introduces a **self-healing architecture** that:
+Modern text classifiers may produce uncertain predictions when input text is ambiguous.
+This project implements a **self-healing classification workflow** that:
 
-* Performs accurate sentiment classification using a fine-tuned transformer model
-* Checks prediction confidence
-* Triggers fallback when confidence is low
-* Seeks user clarification or consults a backup model
-* Produces a robust final decision with complete logging
+* Performs sentiment classification using a fine-tuned transformer model
+* Evaluates confidence for every prediction
+* Triggers fallback logic when confidence is below a threshold
+* Uses user clarification or a backup model to improve reliability
+* Logs all events for transparency and later analysis
 
-This design aligns with **safety-first AI principles** and demonstrates practical human-in-the-loop decision routing.
+The architecture prioritizes **safety and correctness**, aligning with practical human-in-the-loop AI requirements.
 
 ---
 
-## **Why LangGraph?**
+## **Why LangGraph**
 
-LangGraph provides a structured, node-based workflow where each step is defined as an independent, testable module.
+LangGraph provides a modular, node-based workflow where every decision step is explicit and testable.
 Using LangGraph ensures:
 
-* Deterministic execution flow
-* Clear routing based on confidence thresholds
-* Modular design (easy to extend and maintain)
-* Transparent state transitions
-* Robust fallback handling
+* Deterministic routing based on confidence levels
+* Clean separation of responsibilities among nodes
+* Better debugging, observability, and traceability
+* Easy extension (e.g., new fallback strategies)
 
-It is well-suited for classification systems requiring controlled logic, recovery paths, and traceability.
+This makes LangGraph well-suited for classification systems requiring controlled logic and recovery paths.
 
 ---
 
 ## **Human-in-the-Loop Rationale**
 
-When the model is uncertain, automated decisions can be incorrect.
-The system therefore prompts:
+Incorrect predictions can be risky when confidence is low.
+To prevent misclassification, the system asks the user:
 
-> “Was this a positive review?”
+“Was this a positive review?”
 
-User clarification helps prevent wrong outputs and allows the classifier to maintain reliability in ambiguous cases.
-If the user remains unsure, the system preserves the original prediction but clearly marks the decision as uncertain.
+If the user expresses uncertainty, the system retains the original prediction but marks it appropriately.
+This makes the final decision more reliable and transparent.
 
 ---
 
@@ -80,8 +105,8 @@ ConfidenceCheckNode (Threshold: 70%)
 
 ## **DAG Diagram**
 
-<p align="center">
-  <img src="dag_diagram.png" width="700" />
+<p align="left">
+  <img src="dag_diagram.png" width="700" height="300" />
 </p>
 
 ---
@@ -109,6 +134,7 @@ self_healing_cls/
 │   └── logger.py
 ├── logs/
 ├── dag_diagram.png
+├── demo_output.png
 ├── requirements.txt
 └── README.md
 ```
@@ -154,7 +180,7 @@ python scripts/train.py --csv data/train.csv
 python scripts/train.py --csv data/train.csv --sample_size 2000
 ```
 
-Model output directory:
+Model artifacts are saved in:
 
 ```
 models/lora_finetuned/
@@ -164,7 +190,7 @@ models/lora_finetuned/
 
 ## **Running the Self-Healing CLI**
 
-### Standard mode (human fallback only)
+### Standard mode (user fallback)
 
 ```
 python scripts/run_cli.py --model_path models/lora_finetuned
@@ -178,9 +204,9 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 
 ---
 
-## **CLI Flow Explanation (Examples)**
+## **CLI Flow Examples**
 
-### 1. High confidence (no fallback)
+### High confidence
 
 ```
 Input: This movie was fantastic.
@@ -189,7 +215,7 @@ Input: This movie was fantastic.
 Final Label: Positive (High-confidence prediction)
 ```
 
-### 2. Low confidence → User correction
+### Low confidence → user correction
 
 ```
 Input: The movie was painfully slow and boring.
@@ -199,59 +225,55 @@ Input: The movie was painfully slow and boring.
 [FallbackNode] Was this a negative review?
 
 User: Yes
-
 Final Label: Negative (Corrected via user clarification)
 ```
 
-### 3. User uncertain → retain original
+### User uncertain
 
 ```
 User: Not sure
-
 Final Label: Negative (Model prediction retained — user unsure)
 ```
 
-### 4. With backup model
+### With backup model
 
 ```
 [BackupModel] Prediction: Negative | Confidence: 82%
 ```
 
-Backup helps the system reinforce low-confidence predictions before asking the user.
-
 ---
 
 ## **Log Analysis**
 
-Generate charts:
+Generate analytics:
 
 ```
 python scripts/analyze_logs.py
 ```
 
-Outputs saved in `logs/`:
+Charts generated:
 
 * confidence_histogram.png
 * confidence_curve.png
 * fallback_stats.png
 
-These visualizations help evaluate model behavior and fallback frequency.
+Saved in the `logs/` directory.
 
 ---
 
 ## **Evaluation Mapping (ATG Requirements)**
 
-| Requirement                     | Status      |
-| ------------------------------- | ----------- |
-| Fine-tuned transformer model    | Completed   |
-| Confidence-based fallback       | Implemented |
-| Human-in-the-loop clarification | Implemented |
-| LangGraph DAG workflow          | Completed   |
-| Interactive CLI                 | Completed   |
-| Structured logs                 | CSV + JSONL |
-| Documentation                   | Completed   |
-| Backup model (optional)         | Implemented |
-| Log visualization (optional)    | Implemented |
+| Requirement                   | Status      |
+| ----------------------------- | ----------- |
+| Fine-tuned transformer model  | Completed   |
+| Confidence-based fallback     | Implemented |
+| Human-in-the-loop interaction | Implemented |
+| LangGraph DAG workflow        | Completed   |
+| Interactive CLI               | Completed   |
+| Structured logs               | CSV + JSONL |
+| Backup model (optional)       | Implemented |
+| Visualization utilities       | Implemented |
+| Documentation                 | Completed   |
 
 ---
 
@@ -261,3 +283,4 @@ These visualizations help evaluate model behavior and fallback frequency.
 GitHub: [https://github.com/Gaurav9693089415](https://github.com/Gaurav9693089415)
 
 ---
+
