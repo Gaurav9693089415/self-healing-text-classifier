@@ -13,17 +13,17 @@ The system intelligently handles low-confidence predictions through human-in-the
 
 ##  Download Model & Dataset
 
-### 📂 Dataset
+###  Dataset
 
 Full dataset used for fine-tuning (raw + processed):
 
-👉 [https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing](https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing)
+  [https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing](https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing)
 
-### 🧠 Fine-Tuned Model
+###  Fine-Tuned Model
 
 Complete LoRA fine-tuned DistilBERT model:
 
-👉 [https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing](https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing)
+  [https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing](https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing)
 
 ---
 
