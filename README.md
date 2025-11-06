@@ -8,7 +8,7 @@ The system intelligently handles low-confidence predictions through human-in-the
 ##  Demo Video
 
  **Watch the full working demo here:**  
- [Click to View on Google Drive](https://drive.google.com/file/d/1OyBqnY6p5G0Gguy-jtfSHUuZX687xA8F/view?usp=sharing)
+  [Click to View on Google Drive](https://drive.google.com/file/d/1OyBqnY6p5G0Gguy-jtfSHUuZX687xA8F/view?usp=sharing)
 ---
 
 ##  Download Model & Dataset
@@ -17,13 +17,13 @@ The system intelligently handles low-confidence predictions through human-in-the
 
 Full dataset used for fine-tuning (raw + processed):
 
-  [https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing](https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing)
+  [click here to see the complete dataset(row and processed)](https://drive.google.com/drive/folders/1zOKXEYsABH2yBv3cTAUfpLdVWZyRgH6V?usp=sharing)
 
 ###  Fine-Tuned Model
 
 Complete LoRA fine-tuned DistilBERT model:
 
-  [https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing](https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing)
+  [click here to see the complete model](https://drive.google.com/drive/folders/1O67jaaKyfTs5YrfCzzfrCwJ1S_pt97_d?usp=sharing)
 
 ---
 
