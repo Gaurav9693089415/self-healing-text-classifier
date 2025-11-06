@@ -155,7 +155,7 @@ self_healing_cls/
 
 ##  Installation & Setup
 
-### 1️ Clone the repository
+###  Clone the repository
 
 ```bash
 git clone https://github.com/Gaurav9693089415/self-healing-text-classifier.git
