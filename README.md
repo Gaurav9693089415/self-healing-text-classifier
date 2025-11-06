@@ -212,7 +212,7 @@ python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 ```
 Input: This movie was fantastic.
 [InferenceNode] Predicted: Positive | Confidence: 98%
-Final Label: Positive
+Final Label: Positive (High-confidence model prediction)
 ```
 
 ###  Low confidence → user correction
