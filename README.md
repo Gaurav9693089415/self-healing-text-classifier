@@ -153,14 +153,25 @@ self_healing_cls/
 
 ---
 
-## **Installation**
+##  Installation & Setup
 
-### Create virtual environment
+### 1️ Clone the repository
 
+```bash
+git clone https://github.com/Gaurav9693089415/self-healing-text-classifier.git
+
+cd self-healing-text-classifier
 ```
+
+###  Create and activate a virtual environment
+
+```bash
 python -m venv myenv
-myenv\Scripts\activate
+myenv\Scripts\activate     # On Windows
+# source myenv/bin/activate  # On macOS/Linux
 ```
+
+
 
 ### Install dependencies
 
