@@ -188,25 +188,22 @@ models/lora_finetuned/
 
 ## **Running the Self-Healing CLI**
 
-### Standard mode
+### Standard Mode (Human-in-the-Loop Fallback)
 
 ```
 python scripts/run_cli.py --model_path models/lora_finetuned
 ```
-
-### With backup zero-shot model
-
+### Backup Model Mode (Zero-Shot Classifier Enabled)
 ```
-[InferenceNode] Predicted: Negative | Confidence: 52%
-[ConfidenceCheckNode] Confidence too low → triggering fallback...
-[BackupModel] Prediction: Negative | Confidence: 77%
-Final Label: Negative
+python scripts/run_cli.py --model_path models/lora_finetuned --use_backup
 ```
+
+
+
 
 ---
 
-## **CLI Flow Examples (Actual Output)**
-
+## **CLI Flow Examples (Based on Actual Experimental Output)**
 ###  High confidence
 
 ```
@@ -218,21 +215,34 @@ Final Label: Positive
 ###  Low confidence → user correction
 
 ```
-Input: The movie was okay...
-[InferenceNode] Pred: Positive | Conf: 66%
-[ConfidenceCheck] → low confidence
-[FallbackNode] Is it negative?
-User: yes
-Final Label: Negative
+Input: The movie was okay, not too bad but not great either
+
+[InferenceNode] Predicted: Positive | Confidence: 66%
+[ConfidenceCheckNode] Confidence too low → triggering fallback...
+[FallbackNode] Could you clarify your intent? Was this a negative review?
+
+User: yes,it was definitely negative
+
+Final Label: Negative (Corrected via user clarification)
 ```
 
 ###  User uncertain
 
 ```
 User: not sure
-Final Label: Positive (prediction retained)
+Final Label: Positive (Model prediction retained — user unsure )
 ```
+### With backup zero-shot model
 
+```
+Input: I feel mixed about the movie, not sure how I feel.
+
+[InferenceNode] Predicted: Negative | Confidence: 52%
+[ConfidenceCheckNode] Confidence too low → triggering fallback...
+[BackupModel] Prediction: Negative | Confidence: 77%
+
+Final Label: Negative (Final label chosen via backup model)
+```
 ---
 
 #  **Log Analysis (WITH IMAGES + ANALYSIS)**
