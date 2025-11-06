@@ -5,7 +5,10 @@
 
 A production-ready sentiment classification pipeline built using a **LoRA fine-tuned DistilBERT model** and a **LangGraph-based Directed Acyclic Graph (DAG)**.
 The system intelligently handles low-confidence predictions through human-in-the-loop clarification and an optional backup zero-shot classifier, ensuring correctness over blind automation.
+##  Demo Video
 
+ **Watch the full working demo here:**  
+ [Click to View on Google Drive](https://drive.google.com/file/d/1OyBqnY6p5G0Gguy-jtfSHUuZX687xA8F/view?usp=sharing)
 ---
 
 ##  Download Model & Dataset
