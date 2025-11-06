@@ -36,7 +36,18 @@ Complete LoRA fine-tuned DistilBERT model:
 ---
 
 ## **Why the Screenshot Output Differs from the Assignment Example**
+The assignment includes a sample interaction such as:
 
+```
+
+Input: The movie was painfully slow and boring.
+[InferenceNode] Predicted label: Positive | Confidence: 54%
+[ConfidenceCheckNode] Confidence too low. Triggering fallback...
+[FallbackNode] Could you clarify your intent? Was this a negative review?
+User: Yes, it was definitely negative.
+Final Label: Negative (Corrected via user clarification)
+
+```
 The assignment includes a sample interaction showing low confidence and fallback.
 However, in this project the fine-tuned DistilBERT model often produces **very high confidence scores (85–99%)** on IMDB due to:
 
